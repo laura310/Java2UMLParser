@@ -15,7 +15,7 @@ public class SrcParser {
 
     private String parsedCode;                          // code that can be recognized by yUML
     private String folderName;                          // provided by user as parameter
-//    private String umlGraph;                      //provided by user as parameter
+//    private String umlGraphName;                        //provided by user as parameter
     private HashMap<String, Boolean> mapIfInterface;    // to tell if a certain .java is an interface or not
     private HashMap<String, String> classRelationMap;  // the relationship between different .java files
     private ArrayList<CompilationUnit> compilationUnits;     // one .java file is one CompilationUnit
@@ -25,9 +25,12 @@ public class SrcParser {
      * Constructor
      * @param folderName
      */
+//    public SrcParser(String folderName, String umlGraphName) {
     public SrcParser(String folderName) {
+
         this.folderName = folderName;
-//        this.umlGraph = umlGraphName;
+//        this.umlGraphName = umlGraphName;
+
         mapIfInterface = new HashMap<>();
         parsedCode = "";
         classRelationMap = new HashMap<>();
@@ -50,10 +53,12 @@ public class SrcParser {
         }
 
         parsedCode += addClassRelations();
-
         System.out.println("Parsed Code: " + parsedCode); // FOR DEBUG.
 
         // UMLGenerator
+//        String umlGraphPath = projRootPath + "/" + umlGraphName;
+//        UMLGenerator graphGenerator = new UMLGenerator(parsedCode, umlGraphPath);
+//        graphGenerator.generateGraph();
     }
 
 

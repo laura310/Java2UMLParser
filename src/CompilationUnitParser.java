@@ -189,27 +189,28 @@ public class CompilationUnitParser {
 
                 methods += "+ " + md.getName() + "(";  // methods prefix
                 for (Object childNode : md.getChildrenNodes()) {
+
                     if (childNode instanceof Parameter) {
                         parseParameterInMethods(childNode);
 
                     } else {
-                        String methodBody[] = childNode.toString().split(" ");
-                        for (String foo : methodBody) {
-                            if (mapIfInterface.containsKey(foo)
-                                    && !mapIfInterface.get(className)) {
-                                relations += "[" + className
-                                        + "] uses -.->";
-                                if (mapIfInterface.get(foo))
-                                    relations += "[<<interface>>;" + foo
-                                            + "]";
+                        
+                        String[] methodBodys = childNode.toString().split(" ");
+
+                        for (String methodBody : methodBodys) {
+
+                            if (mapIfInterface.containsKey(methodBody) && !mapIfInterface.get(className)) {
+                                relations += "[" + className + "] uses -.->";
+                                if (mapIfInterface.get(methodBody))
+                                    relations += "[<<interface>>;" + methodBody + "]";
                                 else
-                                    relations += "[" + foo + "]";
+                                    relations += "[" + methodBody + "]";
                                 relations += ",";
                             }
                         }
                     }
                 }
-                methods += ") : " + md.getType() + ";";
+                methods += ") : " + md.getType() + ";";  //methods postfix
             }
         }
     }
