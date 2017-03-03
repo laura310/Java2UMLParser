@@ -52,7 +52,7 @@ public class CompilationUnitParser {
         ClassOrInterfaceDeclaration coiDecl = (ClassOrInterfaceDeclaration) compilationUnit.getTypes().get(0);
 
         // parse class info
-        if (coiDecl.isInterface())   parsedClassInfo = "[" + "<<interface>>;";
+        if (coiDecl.isInterface())   parsedClassInfo = "[" + "<<interface>>; ";
         else                         parsedClassInfo = "[";
         parsedClassInfo += coiDecl.getName();
         className = coiDecl.getName();
@@ -87,7 +87,7 @@ public class CompilationUnitParser {
         // check implement from some interface
         if (coiDecl.getImplements() != null) {
             for (ClassOrInterfaceType intface : coiDecl.getImplements()) {
-                relations += "[" + className + "] " + "-.-^ " + "[" + "<<interface>>;" + intface + "]";
+                relations += "[" + className + "] " + "-.-^ " + "[" + "<<interface>>; " + intface + "]";
                 relations += ",";
             }
         }
@@ -194,7 +194,7 @@ public class CompilationUnitParser {
                         parseParameterInMethods(childNode);
 
                     } else {
-                        
+
                         String[] methodBodys = childNode.toString().split(" ");
 
                         for (String methodBody : methodBodys) {
@@ -202,7 +202,7 @@ public class CompilationUnitParser {
                             if (mapIfInterface.containsKey(methodBody) && !mapIfInterface.get(className)) {
                                 relations += "[" + className + "] uses -.->";
                                 if (mapIfInterface.get(methodBody))
-                                    relations += "[<<interface>>;" + methodBody + "]";
+                                    relations += "[<<interface>>; " + methodBody + "]";
                                 else
                                     relations += "[" + methodBody + "]";
                                 relations += ",";
@@ -223,7 +223,7 @@ public class CompilationUnitParser {
         if (mapIfInterface.containsKey(paramClass)) {
             relations += "[" + className + "] uses -.->";
             if (mapIfInterface.get(paramClass))
-                relations += "[<<interface>>;" + paramClass + "]";
+                relations += "[<<interface>>; " + paramClass + "]";
             else
                 relations += "[" + paramClass + "]";
         }

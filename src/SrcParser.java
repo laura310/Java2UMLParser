@@ -15,7 +15,7 @@ public class SrcParser {
 
     private String parsedCode;                          // code that can be recognized by yUML
     private String folderName;                          // provided by user as parameter
-//    private String umlGraphName;                        //provided by user as parameter
+    private String umlGraphName;                        //provided by user as parameter
     private HashMap<String, Boolean> mapIfInterface;    // to tell if a certain .java is an interface or not
     private HashMap<String, String> classRelationMap;  // the relationship between different .java files
     private ArrayList<CompilationUnit> compilationUnits;     // one .java file is one CompilationUnit
@@ -25,11 +25,10 @@ public class SrcParser {
      * Constructor
      * @param folderName
      */
-//    public SrcParser(String folderName, String umlGraphName) {
-    public SrcParser(String folderName) {
+    public SrcParser(String folderName, String umlGraphName) {
 
         this.folderName = folderName;
-//        this.umlGraphName = umlGraphName;
+        this.umlGraphName = umlGraphName;
 
         mapIfInterface = new HashMap<>();
         parsedCode = "";
@@ -53,12 +52,13 @@ public class SrcParser {
         }
 
         parsedCode += addClassRelations();
+        parsedCode = parsedCode.substring(0, parsedCode.length()-1); //get rid of ending ","
         System.out.println("Parsed Code: " + parsedCode); // FOR DEBUG.
 
         // UMLGenerator
-//        String umlGraphPath = projRootPath + "/" + umlGraphName;
-//        UMLGenerator graphGenerator = new UMLGenerator(parsedCode, umlGraphPath);
-//        graphGenerator.generateGraph();
+        String umlGraphPath = projRootPath + "/" + umlGraphName + ".png";
+        UMLGenerator graphGenerator = new UMLGenerator(parsedCode, umlGraphPath);
+        graphGenerator.generateGraph();
     }
 
 
@@ -123,7 +123,9 @@ public class SrcParser {
 
         String result = "";
         Set<String> keys = classRelationMap.keySet(); // get all keys
+
         for (String key : keys) {
+
             String[] classes = key.split("-");
             if (mapIfInterface.get(classes[0]))         result += "[<<interface>>;" + classes[0] + "]";
             else                                        result += "[" + classes[0] + "]";
