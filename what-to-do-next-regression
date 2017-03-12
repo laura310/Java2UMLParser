@@ -1,0 +1,17 @@
+// this is a little conclusion after finishing class diagram and before starting sequence diagram.
+
+What to do next before deadline:
+
+1, review knowledge base of class diagram and sequence diagram, if possible, play with Astah to generate these kind of diagrams.
+
+2, code review the class diagram frequently to remove redundency and do necessary modifications.
+
+3, try to use the concept, idea or even code from class diagram to use in sequence diagram.
+
+4, design sequence diagram and do implementation.
+
+5, try to incorporate sequence diagram code into the original code.
+
+6, code review the integrated codes to do modification.
+
+7, report can be done incrementally piece by piece.
