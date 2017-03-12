@@ -13,12 +13,12 @@ import java.util.*;
 
 public class SrcParser {
 
-    private String parsedCode;                          // code that can be recognized by yUML
-    private String folderName;                          // provided by user as parameter
-    private String umlGraphName;                        //provided by user as parameter
-    private HashMap<String, Boolean> mapIfInterface;    // to tell if a certain .java is an interface or not
-    private HashMap<String, String> classRelationMap;  // the relationship between different .java files
-    private ArrayList<CompilationUnit> compilationUnits;     // one .java file is one CompilationUnit
+    private String parsedCode;                              // code that can be recognized by yUML
+    private String folderName;                              // provided by user as parameter
+    private String umlGraphName;                            //provided by user as parameter
+    private HashMap<String, Boolean> mapIfInterface;        // to tell if a certain .java is an interface or not
+    private HashMap<String, String> classRelationMap;       // the relationship between different .java files
+    private ArrayList<CompilationUnit> compilationUnits;    // one .java file is one CompilationUnit
 
 
     /**
@@ -38,11 +38,12 @@ public class SrcParser {
 
 
     public void run() {
-        // to get the project root path
+        // step 1:  to get the project root path.
         String projRootPath = new File("f").getAbsolutePath();
         projRootPath = projRootPath.substring(0, projRootPath.length()-2); //to get rid of the ending "/f"
 
 
+        // step 2:  to parse the java source code.
         getCompilationUnits(projRootPath + "/" + folderName);
         checkIfInterface(compilationUnits);
 
@@ -55,7 +56,7 @@ public class SrcParser {
         parsedCode = parsedCode.substring(0, parsedCode.length()-1); //get rid of ending ","
         System.out.println("Parsed Code: " + parsedCode); // FOR DEBUG.
 
-        // UMLGenerator
+        // step 3:  to generate the UML graph: class Diagram.
         String umlGraphPath = projRootPath + "/" + umlGraphName + ".png";
         UMLGenerator graphGenerator = new UMLGenerator(parsedCode, umlGraphPath);
         graphGenerator.generateGraph();
