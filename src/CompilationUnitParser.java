@@ -117,7 +117,11 @@ public class CompilationUnitParser {
 
         String scope = convertAccessModifierToSym(bd.toStringWithoutComments().substring(0, bd.toStringWithoutComments().indexOf(" ")));
         String fieldClassName = convert2Parenthesis(fd.getChildrenNodes().get(0).toString());
+        System.out.println("\n 1111 fieldClassName:  " + fieldClassName + "\n");
+
         String variableName = fd.getChildrenNodes().get(1).toString();
+        System.out.print("\n2222 fd.getChildrenNodes():    " + fd.getChildrenNodes() + "\n");
+        System.out.print("\n3333 variableName:    " + variableName + "\n");
 
         // i.e. private Collection<Observer> observers = new ArrayList<Observer>() ;
         if (variableName.contains("="))
@@ -144,8 +148,10 @@ public class CompilationUnitParser {
             classRelationMap.put(this.className + "-" + relationClass, relation);
         }
 
-        if (scope == "+" || scope == "-")
+        if ((scope == "+" || scope == "-") && !mapIfInterface.containsKey(relationClass)) { //get rid of unnecessary fields representation
             fields += scope + " " + variableName + " : " + fieldClassName + "; ";
+            System.out.println("\n4444 fields: " + fields + "\n");
+        }
     }
 
 
