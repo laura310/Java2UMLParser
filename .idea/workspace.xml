@@ -55,8 +55,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test-3.png" pinned="false" current-in-tab="true">
+      <file leaf-file-name="test-3.png" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test-3.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test-4.png" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test-4.png">
           <provider selected="true" editor-type-id="images">
             <state />
           </provider>
@@ -232,7 +239,7 @@
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="Java2UML" />
       <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="uml-parser-test-3  test-3" />
+      <option name="PROGRAM_PARAMETERS" value="uml-parser-test-4  test-4" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
@@ -718,12 +725,12 @@
       <workItem from="1489598471653" duration="520000" />
       <workItem from="1490307901083" duration="391000" />
       <workItem from="1490308392072" duration="558000" />
-      <workItem from="1490741467766" duration="3523000" />
+      <workItem from="1490741467766" duration="3612000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69826000" />
+    <option name="totallyTimeSpent" value="69915000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -1187,11 +1194,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test-4.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Java2UML.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -1229,6 +1231,11 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test-3.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test-4.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
