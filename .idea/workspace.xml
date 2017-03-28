@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5b6bad63-247b-4ddc-922f-f40f0f003b13" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Java2UMLParser/CompilationUnitParser.class" afterPath="$PROJECT_DIR$/out/production/Java2UMLParser/CompilationUnitParser.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Java2UMLParser/SrcParser.class" afterPath="$PROJECT_DIR$/out/production/Java2UMLParser/SrcParser.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test-1.png" afterPath="$PROJECT_DIR$/test-1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test-2.png" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CompilationUnitParser.java" afterPath="$PROJECT_DIR$/src/CompilationUnitParser.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -47,8 +44,8 @@
       <file leaf-file-name="CompilationUnitParser.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/CompilationUnitParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="664">
-              <caret line="150" column="138" lean-forward="false" selection-start-line="150" selection-start-column="138" selection-end-line="150" selection-end-column="138" />
+            <state relative-caret-position="243">
+              <caret line="149" column="0" lean-forward="false" selection-start-line="149" selection-start-column="0" selection-end-line="149" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -224,7 +221,7 @@
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="Java2UML" />
       <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="uml-parser-test-2  test-2" />
+      <option name="PROGRAM_PARAMETERS" value="uml-parser-test-1  test-1" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
@@ -710,12 +707,12 @@
       <workItem from="1489598471653" duration="520000" />
       <workItem from="1490307901083" duration="391000" />
       <workItem from="1490308392072" duration="558000" />
-      <workItem from="1490741467766" duration="3307000" />
+      <workItem from="1490741467766" duration="3405000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69610000" />
+    <option name="totallyTimeSpent" value="69708000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -1212,20 +1209,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test-1.png">
+    <entry file="file://$PROJECT_DIR$/test-2.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test-2.png">
+    <entry file="file://$PROJECT_DIR$/test-1.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CompilationUnitParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="664">
-          <caret line="150" column="138" lean-forward="false" selection-start-line="150" selection-start-column="138" selection-end-line="150" selection-end-column="138" />
+        <state relative-caret-position="243">
+          <caret line="149" column="0" lean-forward="false" selection-start-line="149" selection-start-column="0" selection-end-line="149" selection-end-column="0" />
           <folding />
         </state>
       </provider>
