@@ -52,6 +52,10 @@ public class SrcParser {
             parsedCode += cuParser.parse();
         }
 
+        /********************/
+        System.out.print("aaaaa:    "+parsedCode);
+        /********************/
+
         parsedCode += addClassRelations();
         parsedCode = parsedCode.substring(0, parsedCode.length()-1); //get rid of ending ","
         System.out.println("Parsed Code: " + parsedCode); // FOR DEBUG.
@@ -65,7 +69,7 @@ public class SrcParser {
 
 
     /***
-     * Return a list of CompilationUnits in the given file path.
+     * Get a list of CompilationUnits from the given file path and put it into "compilationUnits".
      *
      * @param filePath
      */
@@ -128,15 +132,17 @@ public class SrcParser {
         for (String key : keys) {
 
             String[] classes = key.split("-");
-            if (mapIfInterface.get(classes[0]))         result += "[<<interface>>;" + classes[0] + "]";
-            else                                        result += "[" + classes[0] + "]";
+            if(classes[0].compareTo(classes[1]) < 0) {
+                if (mapIfInterface.get(classes[0])) result += "[<<interface>>;" + classes[0] + "]";
+                else result += "[" + classes[0] + "]";
 
-            result += classRelationMap.get(key); // Add connection
+                result += classRelationMap.get(key); // Add connection
 
-            if (mapIfInterface.get(classes[1]))         result += "[<<interface>>;" + classes[1] + "]";
-            else                                        result += "[" + classes[1] + "]";
+                if (mapIfInterface.get(classes[1])) result += "[<<interface>>;" + classes[1] + "]";
+                else result += "[" + classes[1] + "]";
 
-            result += ",";
+                result += ",";
+            }
         }
         return result;
     }
