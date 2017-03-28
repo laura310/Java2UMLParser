@@ -48,8 +48,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test-2.png" pinned="false" current-in-tab="true">
+      <file leaf-file-name="test-2.png" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test-2.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test-3.png" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test-3.png">
           <provider selected="true" editor-type-id="images">
             <state />
           </provider>
@@ -225,7 +232,7 @@
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="Java2UML" />
       <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="uml-parser-test-2  test-2" />
+      <option name="PROGRAM_PARAMETERS" value="uml-parser-test-3  test-3" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
@@ -711,12 +718,12 @@
       <workItem from="1489598471653" duration="520000" />
       <workItem from="1490307901083" duration="391000" />
       <workItem from="1490308392072" duration="558000" />
-      <workItem from="1490741467766" duration="3457000" />
+      <workItem from="1490741467766" duration="3523000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69760000" />
+    <option name="totallyTimeSpent" value="69826000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -801,16 +808,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/UMLGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="39" column="24" lean-forward="false" selection-start-line="39" selection-start-column="24" selection-end-line="39" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/SrcParser.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="720">
@@ -1227,6 +1224,11 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test-2.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test-3.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
