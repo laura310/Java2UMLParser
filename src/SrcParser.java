@@ -132,7 +132,8 @@ public class SrcParser {
         for (String key : keys) {
 
             String[] classes = key.split("-");
-            if(classes[0].compareTo(classes[1]) < 0) {
+
+            if(classes[0].compareTo(classes[1]) < 0) {   // to get rid of duplicate relations between classes
                 if (mapIfInterface.get(classes[0])) result += "[<<interface>>;" + classes[0] + "]";
                 else result += "[" + classes[0] + "]";
 
