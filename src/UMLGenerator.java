@@ -23,7 +23,6 @@ public class UMLGenerator {
         try {
 
             URL url = new URL("https://yuml.me/diagram/plain/class/" + parsedCode + ".png");
-//            URL url = new URL("https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png");
 
             HttpURLConnection urlConn = (HttpURLConnection) url.openConnection();
 
