@@ -3,7 +3,9 @@
  */
 public class Java2UML {
     public static void main(String[] args) {
-        SrcParserClass srcParserClass = new SrcParserClass(args[0], args[1]);
-        srcParserClass.run();
+        if(args[0].equals("class")) {
+            SrcParserClass srcParserClass = new SrcParserClass(args[1], args[2]);
+            srcParserClass.run();
+        }
     }
 }
