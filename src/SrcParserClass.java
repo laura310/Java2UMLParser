@@ -11,7 +11,7 @@ import com.github.javaparser.*;
 import com.github.javaparser.ast.body.*;
 import java.util.*;
 
-public class SrcParser {
+public class SrcParserClass {
 
     private String parsedCode;                              // code that can be recognized by yUML
     private String folderName;                              // provided by user as parameter
@@ -25,7 +25,7 @@ public class SrcParser {
      * Constructor
      * @param folderName
      */
-    public SrcParser(String folderName, String umlGraphName) {
+    public SrcParserClass(String folderName, String umlGraphName) {
 
         this.folderName = folderName;
         this.umlGraphName = umlGraphName;
