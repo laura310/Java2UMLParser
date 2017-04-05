@@ -1,11 +1,13 @@
 import com.github.javaparser.JavaParser;
 import com.github.javaparser.ast.CompilationUnit;
+import com.github.javaparser.ast.expr.MethodCallExpr;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * Created by laurazhou on 4/4/17.
@@ -13,27 +15,45 @@ import java.util.ArrayList;
 public class SrcParserSeq {
 
     private String parsedCode;
+
     private String folderName;
     private String umlGraphName;
+    private String calleeFuncName;
+    private String calleeClassName;
 
     private ArrayList<CompilationUnit> compilationUnits;
-
+    private HashMap<String, String> methodClassMap;
+    private HashMap<String, ArrayList<MethodCallExpr>> methodExprsMap;
 
     /**
      * Constructor
      * @param folderName
      */
-    public SrcParserSeq(String folderName, String umlGraphName) {
+    public SrcParserSeq(String folderName, String umlGraphName, String calleeFuncName, String calleeClassName) {
+
+        parsedCode = "@startuml\n";  // conform to plantuml format
 
         this.folderName = folderName;
         this.umlGraphName = umlGraphName;
+        this.calleeFuncName = calleeFuncName;
+        this.calleeClassName = calleeClassName;
 
-        parsedCode = "";
+        compilationUnits = new ArrayList<>();
+        methodClassMap = new HashMap<>();
+        methodExprsMap = new HashMap<>();
     }
 
+    public void run() {
+        // step 1:  to get the project root path.
+        String projRootPath = new File("f").getAbsolutePath();
+        projRootPath = projRootPath.substring(0, projRootPath.length()-2); //to get rid of the ending "/f"
 
+        // step 2:  to parse the java source code.
+        getCompilationUnits(projRootPath + "/" + folderName);
+        //populateMaps();
 
-
+        System.out.println(compilationUnits);
+    }
 
     /***
      * Get a list of CompilationUnits from the given file path and put it into "compilationUnits".
@@ -46,6 +66,7 @@ public class SrcParserSeq {
         for(File f : file.listFiles()) {
             if(f.isFile() && f.getName().endsWith(".java")) {
                 FileInputStream in = null;
+
                 try {
 
                     in = new FileInputStream(f);
@@ -70,5 +91,10 @@ public class SrcParserSeq {
                 }
             }
         }
+    }
+
+    //populate methodClassMap<methodName, className> and methodExprsMap<methodName, methodExpressions>
+    private void populateMaps() {
+
     }
 }
