@@ -56,17 +56,6 @@ public class SrcParserSeq {
         getCompilationUnits(projRootPath + "/" + folderName);
         populateMaps();
 
-        System.out.println("******************************** methodExprsMap\n********************************\n");
-        System.out.println(methodExprsMap);
-        System.out.println("******************************** methodExprsMap\n********************************\n");
-
-        System.out.println("******************************** methodClassMap\n********************************\n");
-        System.out.println(methodClassMap);
-        for (Map.Entry entry : methodClassMap.entrySet()) {
-            System.out.println("\n***" + entry.getKey() + ", " + entry.getValue());
-        }
-        System.out.println("******************************** methodClassMap\n********************************\n");
-
         parsedCode = "@startuml\n";                     // conform to plantuml format
         parsedCode += "actor Actor #black\n";
         parsedCode += "activate " + methodClassMap.get(startFuncName) + "\n";
@@ -133,7 +122,10 @@ public class SrcParserSeq {
                         in.close();
 
                     } catch (IOException e) {
-                        System.out.println("IOException from getCompilationUnits method");
+                        System.out.println("IOException from closing FileInputStream in getCompilationUnits method");
+                        e.printStackTrace();
+                    } catch (Exception e) {
+                        System.out.println("Exception from closing FileInputStream in getCompilationUnits method");
                         e.printStackTrace();
                     }
                 }
@@ -141,37 +133,28 @@ public class SrcParserSeq {
         }
     }
 
-    //populate methodClassMap<methodName, className> and methodExprsMap<methodName, methodExpressions>
+
+    /***
+     * Populate methodClassMap<methodName, className> and methodExprsMap<methodName, methodExpressions>.
+     *
+     */
     private void populateMaps() {
         String className = "";
 
 
         for(CompilationUnit compilationUnit : compilationUnits) {
-            System.out.println("********************************Begin: .java file\n********************************");
-            System.out.println("/******/1 - compilationUnit.");
-            System.out.println(compilationUnit);
-            System.out.println("********************************End: .java file\n********************************\n");
-
 
             List<TypeDeclaration> typeDeclarations = compilationUnit.getTypes();
             for(TypeDeclaration typeDeclaration : typeDeclarations) {
-                System.out.println("/******/2 - TypeDeclaration.\n" + typeDeclaration);
 
                 className = typeDeclaration.getName();
-                System.out.println("$$$$$$$$$$$$$$$" + className);
 
                 for(BodyDeclaration bodyDeclaration : typeDeclaration.getMembers()) {
-                    System.out.println("/******/3 - BodyDeclaration.\n" + bodyDeclaration);
 
                     if(bodyDeclaration instanceof MethodDeclaration) {
                         ArrayList<MethodCallExpr> methodCallExprs = new ArrayList<>();
-                        
-                        System.out.println("/******/4 - bodyDeclaration as MethodDeclaration.\n" + bodyDeclaration);
 
                         for(Node nodeMethodDeclChild : ((MethodDeclaration) bodyDeclaration).getChildrenNodes()) {
-                            System.out.println("/******/5 - node of ((MethodDeclaration) bodyDeclaration).getChildrenNodes().");
-
-                            System.out.println(nodeMethodDeclChild + "\n" + nodeMethodDeclChild);
 
                             if(nodeMethodDeclChild instanceof BlockStmt) {
                                 for(Node nodeBlockStmtChild : ((BlockStmt) nodeMethodDeclChild).getChildrenNodes()) {
@@ -191,6 +174,11 @@ public class SrcParserSeq {
         }
     }
 
+
+    /***
+     * Generate Sequence Diagram based on parsedcode.
+     *
+     */
     public DiagramDescription generateSeqDiagram(String parsedCode, String umlGraphPath) {
         OutputStream out = null;
         DiagramDescription diagramDescription = null;
