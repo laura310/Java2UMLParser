@@ -47,6 +47,7 @@ public class SrcParserSeq {
     }
 
     public void run() {
+
         // step 1:  to get the project root path.
         String projRootPath = new File("f").getAbsolutePath();
         projRootPath = projRootPath.substring(0, projRootPath.length()-2); //to get rid of the ending "/f"
@@ -111,9 +112,11 @@ public class SrcParserSeq {
                     compilationUnits.add(cu);
 
                 } catch (FileNotFoundException e) {
+
                     System.out.println("FileNotFoundException from getCompilationUnits method");
                     e.printStackTrace();
                 } catch (Exception e) {
+
                     System.out.println("Exception from getCompilationUnits method");
                     e.printStackTrace();
                 } finally {
@@ -140,7 +143,6 @@ public class SrcParserSeq {
      */
     private void populateMaps() {
         String className = "";
-
 
         for(CompilationUnit compilationUnit : compilationUnits) {
 
