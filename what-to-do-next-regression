@@ -1,19 +1,11 @@
-Current status: class diagram finished, sequence diagram not beginning.
+Current status: class diagram finished, sequence diagram finished.
 
-Just solved problem(s):  Security problem solved, graph can be generated now.
+New problems: When converting to .jar file. Program doen't work. maybe because of paths.
 
 What to do next before deadline:
 
-1, review knowledge base of class diagram and sequence diagram, if possible, play with Astah to generate these kind of diagrams.
+1, code review to remove redundency and do necessary modifications.
 
-2, code review the class diagram frequently to remove redundency and do necessary modifications.
+2, convert to .jar file.
 
-3, try to use the concept, idea or even code from class diagram to use in sequence diagram.
-
-4, design sequence diagram and do implementation.
-
-5, try to incorporate sequence diagram code into the original code.
-
-6, code review the integrated codes to do modification.
-
-7, report can be done incrementally piece by piece.
+3, doing report incrementally.
