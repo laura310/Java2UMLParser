@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5b6bad63-247b-4ddc-922f-f40f0f003b13" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CompilationUnitParser.java" afterPath="$PROJECT_DIR$/src/CompilationUnitParser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Java2UML.java" afterPath="$PROJECT_DIR$/src/Java2UML.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/UMLGenerator.java" afterPath="$PROJECT_DIR$/src/UMLGenerator.java" />
-    </list>
+    <list default="true" id="5b6bad63-247b-4ddc-922f-f40f0f003b13" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -753,7 +749,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="93121000" />
+    <option name="totallyTimeSpent" value="93174000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
