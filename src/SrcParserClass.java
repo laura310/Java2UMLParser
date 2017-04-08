@@ -39,8 +39,8 @@ public class SrcParserClass {
 
     public void run() {
         // step 1:  to get the project root path.
-        String projRootPath = new File("f").getAbsolutePath();
-        projRootPath = projRootPath.substring(0, projRootPath.length()-2); //to get rid of the ending "/f"
+        String projRootPath = new File("").getAbsolutePath();
+//        projRootPath = projRootPath.substring(0, projRootPath.length()-1); //to get rid of the ending "/f"
 
 
         // step 2:  to parse the java source code.
