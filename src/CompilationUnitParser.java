@@ -23,8 +23,6 @@ public class CompilationUnitParser {
     private String relations;   // parsed code for relations
     ArrayList<String> makeGetterSetterPublicAttri;
 
-
-
     /**
      * Constructor
      */

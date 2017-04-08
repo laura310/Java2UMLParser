@@ -39,9 +39,11 @@ public class UMLGenerator {
             out.close();
 
         } catch (MalformedURLException e) {
+
             System.out.println("MalformedURLException from creating URL in generateGraph() method.");
             e.printStackTrace();
         } catch (IOException e) {
+
             System.out.println("IOException from opening stream in generateGraph() method.");
             e.printStackTrace();
         }
