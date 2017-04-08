@@ -2,14 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5b6bad63-247b-4ddc-922f-f40f0f003b13" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sampleSeq.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test-1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test-2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test-3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test-4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test-5.png" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Java2UMLParser/SrcParserClass.class" afterPath="$PROJECT_DIR$/out/production/Java2UMLParser/SrcParserClass.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SrcParserClass.java" afterPath="$PROJECT_DIR$/src/SrcParserClass.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -39,8 +31,8 @@
       <file leaf-file-name="SrcParserClass.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/SrcParserClass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="197">
-              <caret line="40" column="48" lean-forward="false" selection-start-line="40" selection-start-column="20" selection-end-line="40" selection-end-column="48" />
+            <state relative-caret-position="212">
+              <caret line="41" column="61" lean-forward="false" selection-start-line="41" selection-start-column="61" selection-end-line="41" selection-end-column="61" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -761,7 +753,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="94453000" />
+    <option name="totallyTimeSpent" value="94573000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -1255,8 +1247,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/SrcParserClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="40" column="48" lean-forward="false" selection-start-line="40" selection-start-column="20" selection-end-line="40" selection-end-column="48" />
+        <state relative-caret-position="212">
+          <caret line="41" column="61" lean-forward="false" selection-start-line="41" selection-start-column="61" selection-end-line="41" selection-end-column="61" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
