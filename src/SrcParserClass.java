@@ -14,8 +14,8 @@ import java.util.*;
 public class SrcParserClass {
 
     private String parsedCode;                              // code that can be recognized by yUML
-    private String folderName;                              // provided by user as parameter
-    private String umlGraphName;                            //provided by user as parameter
+    private String srcPath;                              // provided by user as parameter
+    private String umlGraphPath;                            //provided by user as parameter
     private HashMap<String, Boolean> mapIfInterface;        // to tell if a certain .java is an interface or not
     private HashMap<String, String> classRelationMap;       // the relationship between different .java files
     private ArrayList<CompilationUnit> compilationUnits;    // one .java file is one CompilationUnit
@@ -23,12 +23,12 @@ public class SrcParserClass {
 
     /**
      * Constructor
-     * @param folderName
+     * @param srcPath
      */
-    public SrcParserClass(String folderName, String umlGraphName) {
+    public SrcParserClass(String srcPath, String umlGraphPath) {
 
-        this.folderName = folderName;
-        this.umlGraphName = umlGraphName;
+        this.srcPath = srcPath;
+        this.umlGraphPath = umlGraphPath;
 
         mapIfInterface = new HashMap<>();
         parsedCode = "";
@@ -38,11 +38,8 @@ public class SrcParserClass {
 
 
     public void run() {
-        // step 1:  to get the project root path.
-        String projRootPath = new File("").getAbsolutePath();
+        getCompilationUnits(srcPath);
 
-        // step 2:  to parse the java source code.
-        getCompilationUnits(projRootPath + "/" + folderName);
         checkIfInterface(compilationUnits);
 
         for (CompilationUnit cu : compilationUnits) {
@@ -50,12 +47,10 @@ public class SrcParserClass {
             parsedCode += cuParser.parse();
         }
 
-        parsedCode += addClassRelations();
+//        parsedCode += addClassRelations();  //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         parsedCode = parsedCode.substring(0, parsedCode.length()-1); //get rid of ending ","
         System.out.println("Parsed Code: " + parsedCode); // FOR DEBUG.
 
-        // step 3:  to generate the UML graph: class Diagram.
-        String umlGraphPath = projRootPath + "/" + umlGraphName + ".png";
         UMLGenerator graphGenerator = new UMLGenerator(parsedCode, umlGraphPath);
         graphGenerator.generateGraph();
     }

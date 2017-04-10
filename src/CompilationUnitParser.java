@@ -93,12 +93,16 @@ public class CompilationUnitParser {
         // Combine ParsedClassInfo, methods and fields
         parsedCode += parsedClassInfo;
 
+        parsedCode += "| ";
         if (!fields.isEmpty()) {
-            parsedCode += "|" + fields;
+            parsedCode += fields;
         }
+
+        parsedCode += "| ";
         if (!methods.isEmpty()) {
-            parsedCode += "|" + methods;
+            parsedCode += methods;
         }
+
         parsedCode += "]";
 
         parsedCode += relations;
@@ -159,11 +163,11 @@ public class CompilationUnitParser {
         if (cd.getDeclarationAsString().startsWith("public") && !coiDecl.isInterface()) {
 
             methods += "+ " + cd.getName() + "("; // methods prefix
-            for (Object childNode : cd.getChildrenNodes()) {
-                if (childNode instanceof Parameter) {
-                    parseParameterInMethods(childNode);
-                }
-            }
+//            for (Object childNode : cd.getChildrenNodes()) {
+//                if (childNode instanceof Parameter) {
+//                    parseParameterInMethods(childNode);
+//                }
+//            }
             methods += ");"; // methods postfix
         }
     }
@@ -194,7 +198,6 @@ public class CompilationUnitParser {
                         parseParameterInMethods(childNode);
 
                     } else {
-
                         String[] methodBodys = childNode.toString().split(" ");
 
                         for (String methodBody : methodBodys) {
@@ -221,11 +224,18 @@ public class CompilationUnitParser {
         methods += paramName + " : " + paramClass;
 
         if (mapIfInterface.containsKey(paramClass)) {
-            relations += "[" + className + "] uses -.->";
-            if (mapIfInterface.get(paramClass))
-                relations += "[<<interface>>; " + paramClass + "]";
-            else
-                relations += "[" + paramClass + "]";
+            String dependencyToInterface = "[<<interface>>; " + paramClass + "]";
+            String dependencyToClass = "[" + paramClass + "]";
+
+            // to avoid duplicat "------->" (Dependency) in graph
+            if(!(relations.contains("[" + className + "] -.->" + dependencyToInterface) || relations.contains("[" + className + "] -.->" + dependencyToClass))) {
+                relations += "[" + className + "] -.->";
+
+                if (mapIfInterface.get(paramClass))
+                    relations += dependencyToInterface;
+                else
+                    relations += dependencyToClass;
+            }
         }
         relations += ",";
     }
