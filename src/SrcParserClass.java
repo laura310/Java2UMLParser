@@ -42,13 +42,18 @@ public class SrcParserClass {
 
         checkIfInterface(compilationUnits);
 
+        StringBuilder sb = new StringBuilder("");
         for (CompilationUnit cu : compilationUnits) {
             CompilationUnitParser cuParser = new CompilationUnitParser(cu, mapIfInterface, classRelationMap);
             parsedCode += cuParser.parse();
+            sb.append(cuParser.getRelations() + ", ");
         }
 
         parsedCode += addClassAssociations();
         parsedCode = parsedCode.substring(0, parsedCode.length()-1); //get rid of ending ","
+
+        parsedCode += (sb.toString());
+
         System.out.println("Parsed Code: " + parsedCode); // FOR DEBUG.
 
         UMLGenerator graphGenerator = new UMLGenerator(parsedCode, umlGraphPath);

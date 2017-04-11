@@ -84,8 +84,8 @@ public class CompilationUnitParser {
 
         // check implement from some interface
         if (coiDecl.getImplements() != null) {
-            for (ClassOrInterfaceType intface : coiDecl.getImplements()) {
-                relations += "[" + className + "] " + "-.-^ " + "[" + "«interface»;" + intface + "]";
+            for (ClassOrInterfaceType classOrInterfaceType : coiDecl.getImplements()) {
+                relations += "[" + className + "] " + "-.-^ " + "[" + "«interface»;" + classOrInterfaceType + "]";
                 relations += ",";
             }
         }
@@ -94,21 +94,30 @@ public class CompilationUnitParser {
         parsedCode += parsedClassInfo;
 
         parsedCode += "| ";
-        if (!fields.isEmpty()) {
+        if (fields.length() != 0) {
             parsedCode += fields;
         }
 
         parsedCode += "| ";
-        if (!methods.isEmpty()) {
+        if (methods.length() != 0) {
             parsedCode += methods;
         }
 
-        parsedCode += "]";
+        parsedCode += "],";
 
-        parsedCode += relations;
+//        parsedCode += relations;   //%%%%%%%
 
         return parsedCode;
     }
+
+    /**
+     *
+     * @return relations for this .java file.
+     */
+    public String getRelations() {
+        return relations;
+    }
+
 
     /**
      * Parsing Fields, only include private and public attributes.
@@ -182,7 +191,8 @@ public class CompilationUnitParser {
         MethodDeclaration md = ((MethodDeclaration) bd);
 
         // Get only public methods
-        if (md.getDeclarationAsString().startsWith("public") && !coiDecl.isInterface()) {
+//        if (md.getDeclarationAsString().startsWith("public") && !coiDecl.isInterface()) {
+        if (md.getDeclarationAsString().startsWith("public")) {
 
             // Public Setters/Getters should be interpreted as "Public Attributes" , test-case-3
             if (md.getName().startsWith("get") || md.getName().startsWith("set")) {
@@ -194,7 +204,7 @@ public class CompilationUnitParser {
                 methods += "+ " + md.getName() + "(";  // methods prefix
                 for (Object childNode : md.getChildrenNodes()) {
 
-                    if (childNode instanceof Parameter) {
+                    if (!coiDecl.isInterface() && childNode instanceof Parameter) {
                         parseParameterInMethods(childNode);
 
                     } else {
