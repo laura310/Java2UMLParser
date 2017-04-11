@@ -14,7 +14,7 @@ import java.util.*;
 public class SrcParserClass {
 
     private String parsedCode;                              // code that can be recognized by yUML
-    private String srcPath;                              // provided by user as parameter
+    private String srcPath;                                 // provided by user as parameter
     private String umlGraphPath;                            //provided by user as parameter
     private HashMap<String, Boolean> mapIfInterface;        // to tell if a certain .java is an interface or not
     private HashMap<String, String> classRelationMap;       // the relationship between different .java files
@@ -49,19 +49,13 @@ public class SrcParserClass {
             sb.append(cuParser.getRelations() + ", ");
         }
 
-
-        System.out.println("Before addClassAssociations, parsedCode: " + parsedCode);
         parsedCode += addClassAssociations();
-
-        System.out.println("After addClassAssociations, parsedCode: " + parsedCode);
-
-        System.out.println("calssRelationMap: ******:   "+ classRelationMap); //%%%%%%%%%%%
 
         parsedCode = parsedCode.substring(0, parsedCode.length()-1); //get rid of ending ","
 
         parsedCode += (sb.toString());
 
-        System.out.println("Parsed Code: " + parsedCode); // FOR DEBUG.
+        System.out.println("Parsed Code: " + parsedCode);
 
         UMLGenerator graphGenerator = new UMLGenerator(parsedCode, umlGraphPath);
         graphGenerator.generateGraph();
@@ -124,8 +118,13 @@ public class SrcParserClass {
     }
 
 
-
+    /***
+     * Convert class associations (represented in HashMap) into yuml recognizable string.
+     * @return String
+     */
     private String addClassAssociations() {
+
+        symplifyClassRelationMap();
 
         String result = "";
         Set<String> keys = classRelationMap.keySet(); // get all keys
@@ -134,7 +133,7 @@ public class SrcParserClass {
 
             String[] classes = key.split("-");
 
-            //if(classes[0].compareTo(classes[1]) < 0) {   // to get rid of duplicate relations between classes
+//            if() {   // to get rid of duplicate relations between classes
                 if (mapIfInterface.get(classes[0])) result += "[«interface»;" + classes[0] + "]";
                 else result += "[" + classes[0] + "]";
 
@@ -144,10 +143,59 @@ public class SrcParserClass {
                 else result += "[" + classes[1] + "]";
 
                 result += ",";
-            //}
+//            }
         }
         return result;
     }
 
+    /***
+     * Bind two mutual dependencies into one.
+     * i.e.,
+     * {[A]-[D] : -*, [D]-[A] : -}  --> {[A]-[D] : 1-*}
+     * {[A]-[D] : -, [D]-[A] : -}  --> {[A]-[D] : -}
+     */
 
+    private void symplifyClassRelationMap() {
+
+        Set<String> keys = classRelationMap.keySet(); // get all keys
+        for(String key : keys) {
+
+            if(!classRelationMap.get(key).equals("")) {
+
+                String[] classes = key.split("-");
+                String class0 = classes[0], class1 = classes[1];
+
+                String relationSym = classRelationMap.get(key);
+                String reverseKey = class1 + "-" + class0;
+
+                if (keys.contains(reverseKey)) {
+
+                    String reverseRelationSym = classRelationMap.get(reverseKey);
+
+                    /** {[A]-[D] : -, [D]-[A] : -*}  --> {[A]-[D] : *-1} **/
+                    if (relationSym.equals("-") && reverseRelationSym.equals("-*")) {
+
+                        classRelationMap.put(key, "*-1");
+
+                    } else if (relationSym.equals("-*")) {
+
+
+                        /** {[A]-[D] : -*, [D]-[A] : -}  --> {[A]-[D] : -*} **/
+                        if (reverseRelationSym.equals("-")) {
+
+                            classRelationMap.put(key, "-*");
+
+                        }
+                        /** {[A]-[D] : -*, [D]-[A] : -*}  --> {[A]-[D] : *-*} **/
+                        else if (reverseRelationSym.equals("-*")) {
+
+                            classRelationMap.put(key, "*-*");
+                        }
+                    }
+
+                    classRelationMap.put(reverseKey, "");
+                }
+            }
+        }
+    }
 }

@@ -25,8 +25,8 @@ public class SrcParserSeq {
     private String startClassName;
 
     private ArrayList<CompilationUnit> compilationUnits;
-    private HashMap<String, String> methodClassMap;         //methodName : corresponding className
-    private HashMap<String, ArrayList<MethodCallExpr>> methodExprsMap;    //methodName : methodCallExpressions
+    private HashMap<String, String> methodClassMap;                         // methodName : corresponding className
+    private HashMap<String, ArrayList<MethodCallExpr>> methodExprsMap;      // methodName : methodCallExpressions
 
     /**
      * Constructor
@@ -51,7 +51,7 @@ public class SrcParserSeq {
         getCompilationUnits(srcPath);
         populateMaps();
 
-        parsedCode = "@startuml\n";                     // conform to plantuml format
+        parsedCode = "@startuml\n";
         parsedCode += "actor Actor #black\n";
         parsedCode += "activate " + methodClassMap.get(startFuncName) + "\n";
 

@@ -105,8 +105,6 @@ public class CompilationUnitParser {
 
         parsedCode += "],";
 
-//        parsedCode += relations;   //%%%%%%%
-
         return parsedCode;
     }
 
@@ -124,7 +122,6 @@ public class CompilationUnitParser {
      * For a FieldDeclaration, there are: scope, fieldClassName, and variableName.
      */
     private void parseFieldDeclaration(BodyDeclaration bd) {
-        System.out.println("parseFieldDeclaration called once.");   //%%%%%
 
         FieldDeclaration fd = ((FieldDeclaration) bd);
 
@@ -156,7 +153,6 @@ public class CompilationUnitParser {
         if (relationClass.length() > 0 && mapIfInterface.containsKey(relationClass)) {
             String relation = getRelationMultiple ? "-*" : "-";
             classAssociationMap.put(this.className + "-" + relationClass, relation);
-            System.out.println("WOWOWOWOWO, classAssociationMap added one.");  //%%%%
         }
 
         if ((scope == "+" || scope == "-") && !mapIfInterface.containsKey(relationClass)) { //get rid of unnecessary fields representation
@@ -197,7 +193,7 @@ public class CompilationUnitParser {
 //        if (md.getDeclarationAsString().startsWith("public") && !coiDecl.isInterface()) {
         if (md.getDeclarationAsString().startsWith("public")) {
 
-            // Public Setters/Getters should be interpreted as "Public Attributes" , test-case-3
+            /** Public Setters/Getters should be interpreted as "Public Attributes" , i.e. test-case-3 **/
             if (md.getName().startsWith("get") || md.getName().startsWith("set")) {
                 String varName = md.getName().substring(3);
                 makeGetterSetterPublicAttri.add(varName.toLowerCase());
@@ -216,7 +212,6 @@ public class CompilationUnitParser {
                         for (String methodBody : methodBodys) {
 
                             if (mapIfInterface.containsKey(methodBody) && !mapIfInterface.get(className)) {
-//                                relations += "[" + className + "] uses -.-> [";
                                 relations += "[" + className + "] uses -.-> [";
                                 if (mapIfInterface.get(methodBody))
                                     relations += "«interface»;" + methodBody + "]";
@@ -232,23 +227,22 @@ public class CompilationUnitParser {
         }
     }
 
+    /** only consider dependencies to interfaces **/
     private void parseParameterInMethods(Object childNode) {
+
         String paramClass = ((Parameter) childNode).getChildrenNodes().get(1).toString();
         String paramName = ((Parameter) childNode).getChildrenNodes().get(0).toString();
         methods += paramName + " : " + paramClass;
 
         if (mapIfInterface.containsKey(paramClass)) {
             String dependencyToInterface = "[«interface»;" + paramClass + "]";
-            String dependencyToClass = "[" + paramClass + "]";
 
-            // to avoid duplicat "------->" (Dependency) in graph
-            if(!(relations.contains("[" + className + "] -.->" + dependencyToInterface) || relations.contains("[" + className + "] -.->" + dependencyToClass))) {
+            /** to avoid duplicate "------->" (Dependency) in graph **/
+            if(!relations.contains("[" + className + "] -.->" + dependencyToInterface)) {
                 relations += "[" + className + "] -.->";
 
                 if (mapIfInterface.get(paramClass))
                     relations += dependencyToInterface;
-                else
-                    relations += dependencyToClass;
             }
         }
         relations += ",";
