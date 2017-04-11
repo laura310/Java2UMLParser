@@ -47,7 +47,7 @@ public class SrcParserClass {
             parsedCode += cuParser.parse();
         }
 
-        parsedCode += addClassRelations();  //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        parsedCode += addClassAssociations();  //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         parsedCode = parsedCode.substring(0, parsedCode.length()-1); //get rid of ending ","
         System.out.println("Parsed Code: " + parsedCode); // FOR DEBUG.
 
@@ -113,7 +113,7 @@ public class SrcParserClass {
 
 
 
-    private String addClassRelations() {
+    private String addClassAssociations() {
 
         String result = "";
         Set<String> keys = classRelationMap.keySet(); // get all keys

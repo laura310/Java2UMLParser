@@ -14,7 +14,7 @@ public class CompilationUnitParser {
     CompilationUnit compilationUnit;
     private String parsedCode;
     private HashMap<String, Boolean> mapIfInterface;    // to tell if a certain .java is an interface or not
-    private HashMap<String, String> classRelationMap;  // the relationship between different .java files
+    private HashMap<String, String> classAssociationMap;  // the relationship between different .java files
 
     private String parsedClassInfo;
     private String className;
@@ -26,10 +26,10 @@ public class CompilationUnitParser {
     /**
      * Constructor
      */
-    public CompilationUnitParser(CompilationUnit cu, HashMap<String, Boolean> mapIfInterface, HashMap<String, String> classRelationMap) {
+    public CompilationUnitParser(CompilationUnit cu, HashMap<String, Boolean> mapIfInterface, HashMap<String, String> classAssociationMap) {
         this.compilationUnit = cu;
         this.mapIfInterface = mapIfInterface;
-        this.classRelationMap = classRelationMap;
+        this.classAssociationMap = classAssociationMap;
 
         parsedCode = "";
         parsedClassInfo = "";
@@ -130,7 +130,7 @@ public class CompilationUnitParser {
         if (scope.equals("-") && makeGetterSetterPublicAttri.contains(variableName.toLowerCase()))
             scope = "+";
 
-        /** populate the classRelationMap **/
+        /** populate the classAssociationMap **/
         String relationClass = "";
         boolean getRelationMultiple = false;
 
@@ -144,7 +144,7 @@ public class CompilationUnitParser {
 
         if (relationClass.length() > 0 && mapIfInterface.containsKey(relationClass)) {
             String relation = getRelationMultiple ? "-*" : "-";
-            classRelationMap.put(this.className + "-" + relationClass, relation);
+            classAssociationMap.put(this.className + "-" + relationClass, relation);
         }
 
         if ((scope == "+" || scope == "-") && !mapIfInterface.containsKey(relationClass)) { //get rid of unnecessary fields representation
