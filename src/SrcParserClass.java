@@ -47,7 +47,7 @@ public class SrcParserClass {
             parsedCode += cuParser.parse();
         }
 
-        parsedCode += addClassAssociations();  //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        parsedCode += addClassAssociations();
         parsedCode = parsedCode.substring(0, parsedCode.length()-1); //get rid of ending ","
         System.out.println("Parsed Code: " + parsedCode); // FOR DEBUG.
 
@@ -123,12 +123,12 @@ public class SrcParserClass {
             String[] classes = key.split("-");
 
             if(classes[0].compareTo(classes[1]) < 0) {   // to get rid of duplicate relations between classes
-                if (mapIfInterface.get(classes[0])) result += "[<<interface>>;" + classes[0] + "]";
+                if (mapIfInterface.get(classes[0])) result += "[«interface»;" + classes[0] + "]";
                 else result += "[" + classes[0] + "]";
 
                 result += classRelationMap.get(key); // Add connection
 
-                if (mapIfInterface.get(classes[1])) result += "[<<interface>>;" + classes[1] + "]";
+                if (mapIfInterface.get(classes[1])) result += "[«interface»;" + classes[1] + "]";
                 else result += "[" + classes[1] + "]";
 
                 result += ",";
