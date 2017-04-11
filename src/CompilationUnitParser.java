@@ -124,6 +124,8 @@ public class CompilationUnitParser {
      * For a FieldDeclaration, there are: scope, fieldClassName, and variableName.
      */
     private void parseFieldDeclaration(BodyDeclaration bd) {
+        System.out.println("parseFieldDeclaration called once.");   //%%%%%
+
         FieldDeclaration fd = ((FieldDeclaration) bd);
 
         String scope = convertAccessModifierToSym(bd.toStringWithoutComments().substring(0, bd.toStringWithoutComments().indexOf(" ")));
@@ -154,6 +156,7 @@ public class CompilationUnitParser {
         if (relationClass.length() > 0 && mapIfInterface.containsKey(relationClass)) {
             String relation = getRelationMultiple ? "-*" : "-";
             classAssociationMap.put(this.className + "-" + relationClass, relation);
+            System.out.println("WOWOWOWOWO, classAssociationMap added one.");  //%%%%
         }
 
         if ((scope == "+" || scope == "-") && !mapIfInterface.containsKey(relationClass)) { //get rid of unnecessary fields representation
@@ -172,11 +175,11 @@ public class CompilationUnitParser {
         if (cd.getDeclarationAsString().startsWith("public") && !coiDecl.isInterface()) {
 
             methods += "+ " + cd.getName() + "("; // methods prefix
-//            for (Object childNode : cd.getChildrenNodes()) {
-//                if (childNode instanceof Parameter) {
-//                    parseParameterInMethods(childNode);
-//                }
-//            }
+            for (Object childNode : cd.getChildrenNodes()) {
+                if (childNode instanceof Parameter) {
+                    parseParameterInMethods(childNode);
+                }
+            }
             methods += ");"; // methods postfix
         }
     }
@@ -213,7 +216,8 @@ public class CompilationUnitParser {
                         for (String methodBody : methodBodys) {
 
                             if (mapIfInterface.containsKey(methodBody) && !mapIfInterface.get(className)) {
-                                relations += "[" + className + "] uses -.->";
+//                                relations += "[" + className + "] uses -.-> [";
+                                relations += "[" + className + "] uses -.-> [";
                                 if (mapIfInterface.get(methodBody))
                                     relations += "«interface»;" + methodBody + "]";
                                 else

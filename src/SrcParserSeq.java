@@ -19,8 +19,8 @@ public class SrcParserSeq {
 
     private String parsedCode;
 
-    private String folderName;
-    private String umlGraphName;
+    private String srcPath;
+    private String umlGraphPath;
     private String startFuncName;
     private String startClassName;
 
@@ -30,14 +30,14 @@ public class SrcParserSeq {
 
     /**
      * Constructor
-     * @param folderName
+     * @param srcPath
      */
-    public SrcParserSeq(String folderName, String umlGraphName, String startFuncName, String startClassName) {
+    public SrcParserSeq(String srcPath, String umlGraphPath, String startFuncName, String startClassName) {
 
         parsedCode = "";
 
-        this.folderName = folderName;
-        this.umlGraphName = umlGraphName;
+        this.srcPath = srcPath;
+        this.umlGraphPath = umlGraphPath;
         this.startFuncName = startFuncName;
         this.startClassName = startClassName;
 
@@ -48,12 +48,7 @@ public class SrcParserSeq {
 
     public void run() {
 
-        // step 1:  to get the project root path.
-        String projRootPath = new File("").getAbsolutePath();
-        String umlGraphPath = projRootPath + "/" + umlGraphName + ".png";
-
-        // step 2:  to parse the java source code.
-        getCompilationUnits(projRootPath + "/" + folderName);
+        getCompilationUnits(srcPath);
         populateMaps();
 
         parsedCode = "@startuml\n";                     // conform to plantuml format

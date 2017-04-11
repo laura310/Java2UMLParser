@@ -49,7 +49,14 @@ public class SrcParserClass {
             sb.append(cuParser.getRelations() + ", ");
         }
 
+
+        System.out.println("Before addClassAssociations, parsedCode: " + parsedCode);
         parsedCode += addClassAssociations();
+
+        System.out.println("After addClassAssociations, parsedCode: " + parsedCode);
+
+        System.out.println("calssRelationMap: ******:   "+ classRelationMap); //%%%%%%%%%%%
+
         parsedCode = parsedCode.substring(0, parsedCode.length()-1); //get rid of ending ","
 
         parsedCode += (sb.toString());
@@ -127,7 +134,7 @@ public class SrcParserClass {
 
             String[] classes = key.split("-");
 
-            if(classes[0].compareTo(classes[1]) < 0) {   // to get rid of duplicate relations between classes
+            //if(classes[0].compareTo(classes[1]) < 0) {   // to get rid of duplicate relations between classes
                 if (mapIfInterface.get(classes[0])) result += "[«interface»;" + classes[0] + "]";
                 else result += "[" + classes[0] + "]";
 
@@ -137,7 +144,7 @@ public class SrcParserClass {
                 else result += "[" + classes[1] + "]";
 
                 result += ",";
-            }
+            //}
         }
         return result;
     }
