@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5b6bad63-247b-4ddc-922f-f40f0f003b13" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test-1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/~$PE202 – Java2UMLParser – Report.docx" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Java2UMLParser/CompilationUnitParser.class" afterPath="$PROJECT_DIR$/out/production/Java2UMLParser/CompilationUnitParser.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Java2UMLParser/SrcParserClass.class" afterPath="$PROJECT_DIR$/out/production/Java2UMLParser/SrcParserClass.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CompilationUnitParser.java" afterPath="$PROJECT_DIR$/src/CompilationUnitParser.java" />
@@ -36,8 +35,8 @@
       <file leaf-file-name="SrcParserClass.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/SrcParserClass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1416">
-              <caret line="128" column="42" lean-forward="false" selection-start-line="128" selection-start-column="26" selection-end-line="128" selection-end-column="42" />
+            <state relative-caret-position="418">
+              <caret line="128" column="26" lean-forward="false" selection-start-line="128" selection-start-column="26" selection-end-line="128" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -48,8 +47,8 @@
       <file leaf-file-name="CompilationUnitParser.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/CompilationUnitParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2047">
-              <caret line="237" column="13" lean-forward="false" selection-start-line="237" selection-start-column="13" selection-end-line="237" selection-end-column="13" />
+            <state relative-caret-position="305">
+              <caret line="64" column="17" lean-forward="true" selection-start-line="64" selection-start-column="17" selection-end-line="64" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -88,8 +87,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>DD</find>
-      <find>&gt;&gt;;</find>
       <find>populate</find>
       <find>parsedcode</find>
       <find>graphNamePath</find>
@@ -106,18 +103,20 @@
       <find>parse</find>
       <find>compilationunitparser</find>
       <find>System.out.print</find>
-      <find>addClassRelations</find>
       <find>system.out</find>
       <find>methodClassMap</find>
       <find>umlgraphname</find>
       <find>use</find>
       <find>classrelationmap</find>
       <find>|</find>
-      <find>classRelationMap</find>
-      <find>relations</find>
       <find>set</find>
       <find>makeGetterSetterPublicAttri</find>
       <find>parseParameterInMethods</find>
+      <find>classRelationMap</find>
+      <find>addClassRelations</find>
+      <find>interface</find>
+      <find>methods</find>
+      <find>relations</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -784,12 +783,12 @@
       <workItem from="1491364228414" duration="8346000" />
       <workItem from="1491422242719" duration="5972000" />
       <workItem from="1491450372351" duration="6332000" />
-      <workItem from="1491841642179" duration="3951000" />
+      <workItem from="1491841642179" duration="5708000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="101721000" />
+    <option name="totallyTimeSpent" value="103478000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -1235,8 +1234,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/SrcParserClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1416">
-          <caret line="128" column="42" lean-forward="false" selection-start-line="128" selection-start-column="26" selection-end-line="128" selection-end-column="42" />
+        <state relative-caret-position="418">
+          <caret line="128" column="26" lean-forward="false" selection-start-line="128" selection-start-column="26" selection-end-line="128" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1245,8 +1244,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CompilationUnitParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2047">
-          <caret line="237" column="13" lean-forward="false" selection-start-line="237" selection-start-column="13" selection-end-line="237" selection-end-column="13" />
+        <state relative-caret-position="305">
+          <caret line="64" column="17" lean-forward="true" selection-start-line="64" selection-start-column="17" selection-end-line="64" selection-end-column="17" />
           <folding />
         </state>
       </provider>

@@ -47,7 +47,7 @@ public class SrcParserClass {
             parsedCode += cuParser.parse();
         }
 
-//        parsedCode += addClassRelations();  //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        parsedCode += addClassRelations();  //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         parsedCode = parsedCode.substring(0, parsedCode.length()-1); //get rid of ending ","
         System.out.println("Parsed Code: " + parsedCode); // FOR DEBUG.
 
