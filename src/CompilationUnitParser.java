@@ -190,11 +190,11 @@ public class CompilationUnitParser {
         MethodDeclaration md = ((MethodDeclaration) bd);
 
         // Get only public methods
-//        if (md.getDeclarationAsString().startsWith("public") && !coiDecl.isInterface()) {
         if (md.getDeclarationAsString().startsWith("public")) {
 
             /** Public Setters/Getters should be interpreted as "Public Attributes" , i.e. test-case-3 **/
-            if (md.getName().startsWith("get") || md.getName().startsWith("set")) {
+
+            if (md.getName().equals("get" + className) || md.getName().startsWith("set" + className)) {
                 String varName = md.getName().substring(3);
                 makeGetterSetterPublicAttri.add(varName.toLowerCase());
 
