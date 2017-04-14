@@ -55,7 +55,7 @@ public class SrcParserClass {
 
         parsedCode += (sb.toString());
 
-        System.out.println("Parsed Code: " + parsedCode);
+//        System.out.println("Parsed Code: " + parsedCode);
 
         UMLGenerator graphGenerator = new UMLGenerator(parsedCode, umlGraphPath);
         graphGenerator.generateGraph();

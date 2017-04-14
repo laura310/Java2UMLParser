@@ -7,12 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5b6bad63-247b-4ddc-922f-f40f0f003b13" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Java2UMLParser_jar/Java2UMLParser.jar" afterPath="$PROJECT_DIR$/out/artifacts/Java2UMLParser_jar/Java2UMLParser.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Java2UMLParser/CompilationUnitParser.class" afterPath="$PROJECT_DIR$/out/production/Java2UMLParser/CompilationUnitParser.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Java2UMLParser/SrcParserSeq.class" afterPath="$PROJECT_DIR$/out/production/Java2UMLParser/SrcParserSeq.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CompilationUnitParser.java" afterPath="$PROJECT_DIR$/src/CompilationUnitParser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SrcParserSeq.java" afterPath="$PROJECT_DIR$/src/SrcParserSeq.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SrcParserClass.java" afterPath="$PROJECT_DIR$/src/SrcParserClass.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -41,18 +37,18 @@
       <file leaf-file-name="SrcParserClass.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/SrcParserClass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1072">
-              <caret line="57" column="13" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+            <state relative-caret-position="194">
+              <caret line="57" column="15" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CompilationUnitParser.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CompilationUnitParser.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/CompilationUnitParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
-              <caret line="111" column="8" lean-forward="false" selection-start-line="111" selection-start-column="8" selection-end-line="111" selection-end-column="8" />
+            <state relative-caret-position="3551">
+              <caret line="259" column="78" lean-forward="false" selection-start-line="259" selection-start-column="78" selection-end-line="259" selection-end-column="78" />
               <folding />
             </state>
           </provider>
@@ -70,7 +66,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SrcParserSeq.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SrcParserSeq.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/SrcParserSeq.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="261">
@@ -91,7 +87,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>methodClassMap</find>
       <find>umlgraphname</find>
       <find>use</find>
       <find>classrelationmap</find>
@@ -105,8 +100,6 @@
       <find>&lt;&lt;int</find>
       <find>-.-&gt;</find>
       <find>relations</find>
-      <find>parseParameterInMethods</find>
-      <find>parseMethodDeclaration</find>
       <find>]</find>
       <find>getrelation</find>
       <find>%%</find>
@@ -121,6 +114,9 @@
       <find>relationClass</find>
       <find>makeGetterSetterPublicAttri</find>
       <find>parse()</find>
+      <find>implement</find>
+      <find>parseParameterInMethods</find>
+      <find>parseMethodDeclaration</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -148,8 +144,8 @@
         <option value="$PROJECT_DIR$/src/UMLGenerator.java" />
         <option value="$PROJECT_DIR$/src/Java2UML.java" />
         <option value="$PROJECT_DIR$/src/SrcParserSeq.java" />
-        <option value="$PROJECT_DIR$/src/SrcParserClass.java" />
         <option value="$PROJECT_DIR$/src/CompilationUnitParser.java" />
+        <option value="$PROJECT_DIR$/src/SrcParserClass.java" />
       </list>
     </option>
   </component>
@@ -209,7 +205,7 @@
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="Java2UML" />
       <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="class $USER_HOME$/Desktop/new-test-case/test3 $USER_HOME$/Desktop/new-test-case/test3.png" />
+      <option name="PROGRAM_PARAMETERS" value="class $USER_HOME$/Desktop/new-test-case/test2 $USER_HOME$/Desktop/new-test-case/test2.png" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
@@ -729,12 +725,12 @@
       <workItem from="1492131575335" duration="797000" />
       <workItem from="1492139977288" duration="245000" />
       <workItem from="1492191681804" duration="664000" />
-      <workItem from="1492207454615" duration="2279000" />
+      <workItem from="1492207454615" duration="4948000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="121566000" />
+    <option name="totallyTimeSpent" value="124235000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -743,13 +739,13 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15903614" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40481928" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942554" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22289157" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.40963855" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31686747" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -1135,26 +1131,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/SrcParserSeq.java">
+    <entry file="file://$PROJECT_DIR$/src/CompilationUnitParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="60" column="47" lean-forward="false" selection-start-line="60" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+        <state relative-caret-position="3551">
+          <caret line="259" column="78" lean-forward="false" selection-start-line="259" selection-start-column="78" selection-end-line="259" selection-end-column="78" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/SrcParserClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1072">
-          <caret line="57" column="13" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+        <state relative-caret-position="194">
+          <caret line="57" column="15" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CompilationUnitParser.java">
+    <entry file="file://$PROJECT_DIR$/src/SrcParserSeq.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="111" column="8" lean-forward="false" selection-start-line="111" selection-start-column="8" selection-end-line="111" selection-end-column="8" />
+        <state relative-caret-position="261">
+          <caret line="60" column="47" lean-forward="false" selection-start-line="60" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
           <folding />
         </state>
       </provider>

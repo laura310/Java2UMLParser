@@ -179,7 +179,7 @@ public class CompilationUnitParser {
             methods += "+ " + cd.getName() + "("; // methods prefix
             for (Object childNode : cd.getChildrenNodes()) {
                 if (childNode instanceof Parameter) {
-                    parseParameterInMethods(childNode);
+                    parseParameterInMethods(childNode, coiDecl);
                 }
             }
             methods += ");"; // methods postfix
@@ -206,7 +206,7 @@ public class CompilationUnitParser {
                 for (Object childNode : md.getChildrenNodes()) {
 
                     if (!coiDecl.isInterface() && childNode instanceof Parameter) {
-                        parseParameterInMethods(childNode);
+                        parseParameterInMethods(childNode, coiDecl);
 
                     } else {
                         String[] methodBodys = childNode.toString().split(" ");
@@ -246,7 +246,7 @@ public class CompilationUnitParser {
     }
 
     /** only consider dependencies to interfaces **/
-    private void parseParameterInMethods(Object childNode) {
+    private void parseParameterInMethods(Object childNode, ClassOrInterfaceDeclaration coiDecl) {
 
         String paramClass = ((Parameter) childNode).getChildrenNodes().get(1).toString();
         String paramName = ((Parameter) childNode).getChildrenNodes().get(0).toString();
@@ -256,8 +256,14 @@ public class CompilationUnitParser {
             String dependencyToInterface = "[«interface»;" + paramClass + "]";
 
             /** to avoid duplicate "------->" (Dependency) in graph **/
-            if(!relations.contains("[" + className + "] -.->" + dependencyToInterface)) {
-                relations += "[" + className + "] -.->";
+            if(!relations.contains("[" + className + "] uses -.->" + dependencyToInterface) && !relations.contains("[" + className + "] -.->" + dependencyToInterface)) {
+                if(coiDecl.getImplements().size() == 0 && coiDecl.getExtends().size() == 0) {
+
+                    relations += "[" + className + "] uses -.->";
+                } else {
+
+                    relations += "[" + className + "] -.->";
+                }
 
                 if (mapIfInterface.get(paramClass))
                     relations += dependencyToInterface;
