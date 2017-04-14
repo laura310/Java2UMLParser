@@ -58,7 +58,7 @@ public class SrcParserSeq {
         parse(startFuncName);
 
         parsedCode += "@enduml";
-        System.out.println("Parsed Code for Sequence Diagram: \n" + parsedCode);
+//        System.out.println("Parsed Code for Sequence Diagram: \n" + parsedCode);
 
         generateSeqDiagram(parsedCode, umlGraphPath);
 

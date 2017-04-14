@@ -55,6 +55,11 @@ public class CompilationUnitParser {
         parsedClassInfo += coiDecl.getName();
         className = coiDecl.getName();
 
+        for(BodyDeclaration bd : coiDecl.getMembers()) {
+            if (bd instanceof MethodDeclaration) {
+                populateMakeGetterSetterPublicAttri(bd, coiDecl);
+            }
+        }
 
         for (BodyDeclaration bd : coiDecl.getMembers()) {
 
@@ -134,8 +139,8 @@ public class CompilationUnitParser {
         if (variableName.contains("="))
             variableName = variableName.split(" ")[0];
 
-        // if this attribute can be accessed by public getters/setters, it should be public attribute in UML
-        if (scope.equals("-") && makeGetterSetterPublicAttri.contains(variableName.toLowerCase()))
+        // if this private attribute can be accessed by public getters/setters, it should be public attribute in UML
+        if (makeGetterSetterPublicAttri.contains(variableName.toLowerCase()) && scope.equals("-"))
             scope = "+";
 
         /** populate the classAssociationMap **/
@@ -154,6 +159,7 @@ public class CompilationUnitParser {
             String relation = getRelationMultiple ? "-*" : "-";
             classAssociationMap.put(this.className + "-" + relationClass, relation);
         }
+
 
         if ((scope == "+" || scope == "-") && !mapIfInterface.containsKey(relationClass)) { //get rid of unnecessary fields representation
             fields += scope + " " + variableName + " : " + fieldClassName + "; ";
@@ -192,13 +198,9 @@ public class CompilationUnitParser {
         // Get only public methods
         if (md.getDeclarationAsString().startsWith("public")) {
 
-            /** Public Setters/Getters should be interpreted as "Public Attributes" , i.e. test-case-3 **/
+            /** Ignoring getters and setters **/
 
-            if (md.getName().equals("get" + className) || md.getName().startsWith("set" + className)) {
-                String varName = md.getName().substring(3);
-                makeGetterSetterPublicAttri.add(varName.toLowerCase());
-
-            } else {
+            if (  !(md.getName().startsWith("get") || md.getName().startsWith("set"))  ) {
 
                 methods += "+ " + md.getName() + "(";  // methods prefix
                 for (Object childNode : md.getChildrenNodes()) {
@@ -212,7 +214,7 @@ public class CompilationUnitParser {
                         for (String methodBody : methodBodys) {
 
                             if (mapIfInterface.containsKey(methodBody) && !mapIfInterface.get(className)) {
-                                relations += "[" + className + "] uses -.-> [";
+                                relations += "[" + className + "] -.-> [";
                                 if (mapIfInterface.get(methodBody))
                                     relations += "«interface»;" + methodBody + "]";
                                 else
@@ -225,6 +227,22 @@ public class CompilationUnitParser {
                 methods += ") : " + md.getType() + ";";  //methods postfix
             }
         }
+    }
+
+
+    /***
+     * Populate the HashMap: MakeGetterSetterPublicAttri to make private attribute public if there's corresponding getters / setters for that attribute.
+     * @param bd
+     * @param coiDecl
+     */
+    private void populateMakeGetterSetterPublicAttri(BodyDeclaration bd, ClassOrInterfaceDeclaration coiDecl) {
+        MethodDeclaration md = ((MethodDeclaration) bd);
+
+        if (md.getDeclarationAsString().startsWith("public") && md.getName().startsWith("get") || md.getName().startsWith("set")) {
+            String varName = md.getName().substring(3);
+            makeGetterSetterPublicAttri.add(varName.toLowerCase());
+        }
+
     }
 
     /** only consider dependencies to interfaces **/
