@@ -19,12 +19,12 @@ First of all, in command line, go to the directory where Java2UMLParser.jar is d
 $java -jar Java2UMLParser.jar class [path_to_test_case] [path_to_where_graph_is_created]
 
 for example,
-# $java -jar Java2UMLParser.jar class /Users/laurazhou/Desktop/new-test-case/test1 /Users/laurazhou/Desktop/new-test-case/test1.png
+$java -jar Java2UMLParser.jar class /Users/laurazhou/Desktop/new-test-case/test1 /Users/laurazhou/Desktop/new-test-case/test1.png
 
 in above example, "/Users/laurazhou/Desktop/new-test-case/test1" is the path to source code. "/Users/laurazhou/Desktop/new-test-case/test1.png" is the path where the class diagram is generated, and the ending "test1.png" is the graph name.
 
 (2) to generate sequence diagram from source code:
-# $java -jar Java2UMLParser.jar seq [path_to_test_case] [path_to_where_graph_is_created] main Main
+$java -jar Java2UMLParser.jar seq [path_to_test_case] [path_to_where_graph_is_created] main Main
 
 for example, 
 $java -jar Java2UMLParser.jar seq /Users/laurazhou/Desktop/new-test-case/sequence /Users/laurazhou/Desktop/new-test-case/sequence.png main Main
