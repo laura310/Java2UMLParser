@@ -133,7 +133,6 @@ public class SrcParserClass {
 
             String[] classes = key.split("-");
 
-//            if() {   // to get rid of duplicate relations between classes
                 if (mapIfInterface.get(classes[0])) result += "[«interface»;" + classes[0] + "]";
                 else result += "[" + classes[0] + "]";
 
@@ -143,7 +142,6 @@ public class SrcParserClass {
                 else result += "[" + classes[1] + "]";
 
                 result += ",";
-//            }
         }
         return result;
     }
