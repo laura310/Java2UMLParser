@@ -255,19 +255,6 @@ public class CompilationUnitParser {
         if (mapIfInterface.containsKey(paramClass)) {
             String dependencyToInterface = "[«interface»;" + paramClass + "]";
 
-//            /** to avoid duplicate "------->" (Dependency) in graph **/
-//            if(!relations.contains("[" + className + "] uses -.->" + dependencyToInterface) && !relations.contains("[" + className + "] -.->" + dependencyToInterface)) {
-//                if(coiDecl.getImplements().size() == 0 && coiDecl.getExtends().size() == 0) {
-//
-//                    relations += "[" + className + "] uses -.->";
-//                } else {
-//
-//                    relations += "[" + className + "] -.->";
-//                }
-//
-//                if (mapIfInterface.get(paramClass))
-//                    relations += dependencyToInterface;
-//            }
             /** to avoid duplicate "------->" (Dependency) in graph **/
             if(!relations.contains("[" + className + "] -.->" + dependencyToInterface)) {
 
