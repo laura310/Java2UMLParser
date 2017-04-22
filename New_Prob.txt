@@ -1,0 +1,3 @@
+To do:
+
+make sure .jar file runs perfect on Windows.
