@@ -3,6 +3,7 @@ import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.net.URLEncoder;
 
 /**
  * Created by laurajoe on 2/19/17.
@@ -23,7 +24,6 @@ public class UMLGenerator {
         try {
 
             URL url = new URL("https://yuml.me/diagram/plain/class/" + parsedCode + ".png");
-
             HttpURLConnection urlConn = (HttpURLConnection) url.openConnection();
 
             InputStream in = urlConn.getInputStream();
