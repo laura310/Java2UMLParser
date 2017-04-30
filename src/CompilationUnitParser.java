@@ -50,7 +50,7 @@ public class CompilationUnitParser {
         ClassOrInterfaceDeclaration coiDecl = (ClassOrInterfaceDeclaration) compilationUnit.getTypes().get(0);
 
         // parse class info
-        if (coiDecl.isInterface())   parsedClassInfo = "[" + "«interface»;";
+        if (coiDecl.isInterface())   parsedClassInfo = "[" + "<interface>;";
         else                         parsedClassInfo = "[";
         parsedClassInfo += coiDecl.getName();
         className = coiDecl.getName();
@@ -90,7 +90,7 @@ public class CompilationUnitParser {
         // check implement from some interface
         if (coiDecl.getImplements() != null) {
             for (ClassOrInterfaceType classOrInterfaceType : coiDecl.getImplements()) {
-                relations += "[" + className + "] " + "-.-^ " + "[" + "«interface»;" + classOrInterfaceType + "]";
+                relations += "[" + className + "] " + "-.-^ " + "[" + "<interface>;" + classOrInterfaceType + "]";
                 relations += ",";
             }
         }
@@ -216,7 +216,7 @@ public class CompilationUnitParser {
                             if (mapIfInterface.containsKey(methodBody) && !mapIfInterface.get(className)) {
                                 relations += "[" + className + "] -.-> [";
                                 if (mapIfInterface.get(methodBody))
-                                    relations += "«interface»;" + methodBody + "]";
+                                    relations += "<interface>;" + methodBody + "]";
                                 else
                                     relations += "[" + methodBody + "]";
                                 relations += ",";
@@ -253,7 +253,7 @@ public class CompilationUnitParser {
         methods += paramName + " : " + paramClass;
 
         if (mapIfInterface.containsKey(paramClass)) {
-            String dependencyToInterface = "[«interface»;" + paramClass + "]";
+            String dependencyToInterface = "[<interface>;" + paramClass + "]";
 
             /** to avoid duplicate "------->" (Dependency) in graph **/
             if(!relations.contains("[" + className + "] -.->" + dependencyToInterface)) {

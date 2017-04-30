@@ -55,7 +55,7 @@ public class SrcParserClass {
 
         parsedCode += (sb.toString());
 
-//        System.out.println("Parsed Code: " + parsedCode);
+        System.out.println("Parsed Code: " + parsedCode);
 
         UMLGenerator graphGenerator = new UMLGenerator(parsedCode, umlGraphPath);
         graphGenerator.generateGraph();
@@ -133,12 +133,12 @@ public class SrcParserClass {
 
             String[] classes = key.split("-");
 
-                if (mapIfInterface.get(classes[0])) result += "[«interface»;" + classes[0] + "]";
+                if (mapIfInterface.get(classes[0])) result += "[<interface>;" + classes[0] + "]";
                 else result += "[" + classes[0] + "]";
 
                 result += classRelationMap.get(key); // Add connection
 
-                if (mapIfInterface.get(classes[1])) result += "[«interface»;" + classes[1] + "]";
+                if (mapIfInterface.get(classes[1])) result += "[<interface>;" + classes[1] + "]";
                 else result += "[" + classes[1] + "]";
 
                 result += ",";
