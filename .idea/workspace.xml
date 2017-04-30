@@ -7,7 +7,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5b6bad63-247b-4ddc-922f-f40f0f003b13" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/CMPE202 – Java2UMLParser – Report.docx" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -759,12 +758,12 @@
       <workItem from="1493221944993" duration="62000" />
       <workItem from="1493222028213" duration="846000" />
       <workItem from="1493223079830" duration="894000" />
-      <workItem from="1493592049976" duration="2387000" />
+      <workItem from="1493592049976" duration="2558000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="130757000" />
+    <option name="totallyTimeSpent" value="130928000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
