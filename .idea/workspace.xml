@@ -7,13 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5b6bad63-247b-4ddc-922f-f40f0f003b13" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/aspectj-DEVELOPMENT-20160512153500.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Java2UMLParser/SrcParserSeq.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/SrcParserSeq.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Java2UMLParser_jar/Java2UMLParser.jar" afterPath="$PROJECT_DIR$/out/artifacts/Java2UMLParser_jar/Java2UMLParser.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Java2UMLParser/Java2UML.class" afterPath="$PROJECT_DIR$/out/production/Java2UMLParser/Java2UML.class" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CMPE202 – Java2UMLParser – Report.docx" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Java2UML.java" afterPath="$PROJECT_DIR$/src/Java2UML.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -764,12 +759,12 @@
       <workItem from="1493221944993" duration="62000" />
       <workItem from="1493222028213" duration="846000" />
       <workItem from="1493223079830" duration="894000" />
-      <workItem from="1493592049976" duration="2312000" />
+      <workItem from="1493592049976" duration="2387000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="130682000" />
+    <option name="totallyTimeSpent" value="130757000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
